@@ -18,3 +18,10 @@ View your app in AI Studio: https://ai.studio/apps/drive/1m1ZR7YD_xv9Oe4rtE887OX
 2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
 3. Run the app:
    `npm run dev`
+
+### ⚠️ Importante: Variáveis de Ambiente (.env)
+
+Os arquivos `.env` ou `.env.local` **não são comandos** para serem executados no terminal. Eles são arquivos de configuração que o sistema lê.
+
+1.  **Edite o arquivo:** Abra o arquivo `.env.local` no seu editor e insira as chaves necessárias.
+2.  **Reinicie o Vite:** Se o servidor já estiver rodando (`npm run dev`), você precisa pará-lo (Ctrl+C no terminal) e iniciá-lo novamente para que as novas variáveis sejam carregadas.

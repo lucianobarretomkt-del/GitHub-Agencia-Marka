@@ -443,7 +443,7 @@ const App: React.FC = () => {
                   <div className="w-10 h-10 md:w-12 md:h-12 rounded-full border border-white/20 flex items-center justify-center shrink-0">
                     <MapPin className="w-4 h-4 md:w-5 md:h-5" />
                   </div>
-                  <span className="text-sm md:text-lg">Campo Bom, Brasil</span>
+                  <span className="text-sm md:text-lg">Campo Bom, Rio Grande do Sul</span>
                 </div>
               </div>
             </div>

@@ -274,7 +274,7 @@ const App: React.FC = () => {
               transition={{ delay: 0.8, duration: 1 }}
               className="text-2xl md:text-4xl font-medium md:font-light italic font-serif text-white/95 leading-tight tracking-tight px-4"
             >
-              “Desde 1997, construo marcas. Não comecei no digital — <span className="text-amber-500">eu cheguei até ele.</span>”
+              “Desde 1997, atuo na construção de marcas. Não comecei no digital — <span className="text-amber-500">eu cheguei até ele.</span>”
             </motion.p>
 
             <motion.div

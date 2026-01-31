@@ -65,9 +65,11 @@ const MarkaMarquee = () => {
             </div>
 
             <div
-                className="relative flex overflow-hidden border-y border-black/10 bg-[#f59e0b] group h-[80px] items-center"
+                className="relative flex overflow-hidden border-y border-black/10 bg-[#f59e0b] group h-[80px] items-center touch-pan-y"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
+                onTouchStart={() => setIsHovered(true)}
+                onTouchEnd={() => setIsHovered(false)}
             >
                 {/* Visual Polish: Side Gradient Fades (to Gold/Amber) */}
                 <div className="absolute top-0 bottom-0 left-0 w-32 md:w-80 bg-gradient-to-r from-[#f59e0b] via-[#f59e0b]/80 to-transparent z-10 pointer-events-none" />
@@ -88,7 +90,8 @@ const MarkaMarquee = () => {
                     }}
                     style={{
                         transform: 'translate3d(0,0,0)',
-                        willChange: 'transform'
+                        willChange: 'transform',
+                        backfaceVisibility: 'hidden'
                     }}
                 >
                     {marqueeItems.map((partner, i) => (

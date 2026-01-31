@@ -248,7 +248,7 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       {/* HERO SECTION */}
-      <header id="hero" className="relative h-[100svh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden px-4 pt-[140px] md:pt-[180px]">
+      <header id="hero" className="relative h-[100svh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden px-4 pt-[160px] md:pt-[180px]">
         <motion.div
           style={{ y, opacity, transform: 'translate3d(0,0,0)' }}
           className="z-20 text-center flex flex-col items-center w-full max-w-6xl pb-24 md:pb-32"
@@ -272,7 +272,7 @@ const App: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="text-2xl md:text-4xl font-light italic font-serif text-white/95 leading-tight tracking-tight px-4"
+              className="text-2xl md:text-4xl font-medium md:font-light italic font-serif text-white/95 leading-tight tracking-tight px-4"
             >
               “Desde 1997, construo marcas. Não comecei no digital — <span className="text-amber-500">eu cheguei até ele.</span>”
             </motion.p>

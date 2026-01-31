@@ -27,7 +27,9 @@ const MarkaCases: React.FC = () => {
                             <img
                                 src="/img/gs-painel-reforma-tributaria-jan2026-desktop-2.webp"
                                 alt="Case G&S Contabilidade - Reforma Tributária 2026"
-                                className="w-full h-auto transition-transform duration-[3s] ease-out group-hover:scale-[1.02]"
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto aspect-[4/5] md:aspect-auto transition-transform duration-[3s] ease-out group-hover:scale-[1.02]"
                                 loading="lazy"
                             />
                         </picture>
@@ -66,7 +68,9 @@ const MarkaCases: React.FC = () => {
                             <img
                                 src="/img/carrossel-solary-31012026-desktop-1.png"
                                 alt="Case Solary Metais - E-commerce Nacional"
-                                className="w-full h-auto transition-transform duration-[3s] ease-out group-hover:scale-[1.02]"
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto aspect-[4/5] md:aspect-auto transition-transform duration-[3s] ease-out group-hover:scale-[1.02]"
                                 loading="lazy"
                             />
                         </picture>

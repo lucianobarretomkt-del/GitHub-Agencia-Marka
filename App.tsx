@@ -12,6 +12,8 @@ import GradientText from './components/GlitchText';
 import CustomCursor from './components/CustomCursor';
 import ServiceCard from './components/ArtistCard'; // Reusing visual component but with Service logic
 import AIChat from './components/AIChat';
+import MarkaCases from './components/MarkaCases';
+import MarkaMarquee from './components/MarkaMarquee';
 import { ServiceItem } from './types';
 
 // Services Data (Agência Marka)
@@ -151,7 +153,7 @@ const App: React.FC = () => {
       <AIChat />
 
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 mix-blend-difference w-full max-w-[100vw]">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-12 py-4 md:py-6 mix-blend-difference w-full max-w-[100vw]">
         {/* Logo Section - Consistently visible across all devices */}
         <motion.div
           whileHover={{ scale: 1.05 }}
@@ -168,6 +170,7 @@ const App: React.FC = () => {
           {[
             { label: 'Sobre', id: 'about' },
             { label: 'Serviços', id: 'services' },
+            { label: 'Cases', id: 'cases' },
             { label: 'Contato', id: 'contact' }
           ].map((item) => (
             <button
@@ -212,6 +215,7 @@ const App: React.FC = () => {
             {[
               { label: 'Sobre', id: 'about' },
               { label: 'Serviços', id: 'services' },
+              { label: 'Cases', id: 'cases' },
               { label: 'Contato', id: 'contact' }
             ].map((item) => (
               <button
@@ -244,22 +248,11 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       {/* HERO SECTION */}
-      <header id="hero" className="relative h-[100svh] min-h-[600px] flex flex-col items-center justify-center overflow-hidden px-4">
+      <header id="hero" className="relative h-[100svh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden px-4 pt-[140px] md:pt-[180px]">
         <motion.div
-          style={{ y, opacity }}
-          className="z-10 text-center flex flex-col items-center w-full max-w-6xl pb-24 md:pb-20"
+          style={{ y, opacity, transform: 'translate3d(0,0,0)' }}
+          className="z-20 text-center flex flex-col items-center w-full max-w-6xl pb-24 md:pb-32"
         >
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="flex items-center gap-3 md:gap-6 text-xs md:text-sm font-mono text-[#FFD700] tracking-[0.2em] md:tracking-[0.3em] uppercase mb-4 bg-black/20 px-4 py-2 rounded-full backdrop-blur-sm"
-          >
-            <span>Digital & Branding</span>
-            <span className="w-1.5 h-1.5 md:w-2 md:h-2 bg-[#FFD700] rounded-full animate-pulse" />
-            <span>Performance</span>
-          </motion.div>
-
           <div className="relative w-full flex justify-center items-center">
             <GradientText
               text="MARKA"
@@ -274,21 +267,29 @@ const App: React.FC = () => {
             />
           </div>
 
-          <motion.div
-            initial={{ scaleX: 0 }}
-            animate={{ scaleX: 1 }}
-            transition={{ duration: 1.5, delay: 0.5, ease: "circOut" }}
-            className="w-full max-w-md h-px bg-gradient-to-r from-transparent via-white/50 to-transparent mt-4 md:mt-8 mb-6 md:mb-8"
-          />
+          <div className="mt-12 md:mt-16 space-y-8 max-w-3xl mx-auto">
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.8, duration: 1 }}
+              className="text-2xl md:text-4xl font-light italic font-serif text-white/95 leading-tight tracking-tight px-4"
+            >
+              “Desde 1997, construo marcas. Não comecei no digital — <span className="text-amber-500">eu cheguei até ele.</span>”
+            </motion.p>
 
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 1 }}
-            className="text-sm md:text-xl font-light max-w-2xl mx-auto text-white/90 leading-relaxed drop-shadow-lg px-4"
-          >
-            Gestão de anúncios online e estratégias digitais para impulsionar seu negócio.
-          </motion.p>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 1.2, duration: 1 }}
+              className="space-y-4"
+            >
+              <div className="w-12 h-px bg-[#FFD700]/40 mx-auto" />
+              <p className="text-white/60 font-light italic text-base md:text-xl tracking-wide font-serif">
+                Luciano Barreto, <span className="text-white/40 not-italic font-sans text-sm tracking-[0.2em] uppercase ml-2">Designer Gráfico.</span>
+              </p>
+            </motion.div>
+
+          </div>
 
           <motion.a
             href="https://wa.me/message/53S7L76U2J4SF1"
@@ -296,26 +297,29 @@ const App: React.FC = () => {
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1, duration: 1 }}
-            className="mt-8 px-8 py-4 bg-[#FFD700] text-black font-bold uppercase tracking-widest rounded-full hover:bg-white transition-colors flex items-center gap-2 group cursor-pointer"
+            transition={{ delay: 1.8, duration: 1 }}
+            className="mt-12 px-10 py-5 bg-[#FFD700] text-black font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all duration-500 flex items-center gap-3 group cursor-pointer shadow-[0_0_30px_rgba(255,215,0,0.2)]"
             data-hover="true"
           >
             Fale Conosco <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
         </motion.div>
 
-        <div className="absolute bottom-12 md:bottom-16 left-0 w-full py-4 md:py-6 bg-white text-black z-20 overflow-hidden border-y-4 border-black shadow-[0_0_40px_rgba(255,255,255,0.4)]">
+        <div
+          className="absolute bottom-10 md:bottom-14 left-0 w-full py-2 md:py-2.5 bg-white text-black z-10 overflow-hidden border-y border-black/10 rotate-1 shadow-2xl will-change-transform flex items-center"
+          style={{ transform: 'translate3d(0,0,0) rotate(1deg)' }}
+        >
           <motion.div
             className="flex w-fit will-change-transform"
             animate={{ x: "-50%" }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           >
             {[0, 1].map((key) => (
-              <div key={key} className="flex whitespace-nowrap shrink-0">
+              <div key={key} className="flex whitespace-nowrap shrink-0 items-center">
                 {[...Array(4)].map((_, i) => (
-                  <span key={i} className="text-2xl md:text-5xl font-heading font-black px-8 flex items-center gap-4">
-                    RESULTADOS RÁPIDOS <span className="text-[#FFD700] text-xl md:text-4xl">●</span>
-                    FOCO EM PERFORMANCE <span className="text-[#FFD700] text-xl md:text-4xl">●</span>
+                  <span key={i} className="text-xl md:text-3xl font-heading font-black px-10 flex items-center gap-6">
+                    RESULTADOS RÁPIDOS <span className="text-[#FFD700] text-lg md:text-2xl opacity-100">●</span>
+                    FOCO EM PERFORMANCE <span className="text-[#FFD700] text-lg md:text-2xl opacity-100">●</span>
                   </span>
                 ))}
               </div>
@@ -404,17 +408,19 @@ const App: React.FC = () => {
           </div>
         </div>
       </section>
+      <MarkaCases />
+
+      <MarkaMarquee />
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="relative z-10 py-20 md:py-32 px-4 md:px-6 bg-black/30 backdrop-blur-lg">
+      <section id="contact" className="relative z-10 py-20 md:py-32 px-4 md:px-6 bg-[#050505]">
+        {/* Subtitle radial glow for depth */}
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80vw] h-[80vw] bg-amber-500/5 blur-[120px] rounded-full pointer-events-none -z-10" />
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12 md:mb-20">
             <h2 className="text-4xl md:text-8xl font-heading font-bold opacity-20 text-white">
               CONTATO
             </h2>
-            <p className="text-[#FFD700] font-mono uppercase tracking-widest -mt-3 md:-mt-8 relative z-10 text-xs md:text-base">
-              Mais visibilidade, mais autoridade, mais vendas — com tráfego pago.
-            </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
@@ -448,8 +454,8 @@ const App: React.FC = () => {
               </div>
             </div>
 
-            <div className="bg-white/5 border border-white/10 p-6 md:p-10 backdrop-blur-xl relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-[#FFD700] to-transparent" />
+            <div className="bg-zinc-900/40 border border-white/5 p-6 md:p-10 backdrop-blur-2xl relative overflow-hidden group/form transition-all duration-700 hover:border-amber-500/10">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-500/20 to-transparent scale-x-0 group-hover/form:scale-x-100 transition-transform duration-1000" />
 
               <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div>
@@ -555,7 +561,7 @@ const App: React.FC = () => {
           <div className="w-full md:w-auto">
             <div className="font-heading text-2xl md:text-4xl font-bold tracking-tighter mb-4 text-white uppercase">Agência Marka</div>
             <div className="flex justify-center md:justify-start gap-2 text-[10px] font-mono text-gray-400">
-              <span>&copy; 2025 Agência Marka. Todos os direitos reservados.</span>
+              <span>&copy; 2026 Agência Marka. Todos os direitos reservados.</span>
             </div>
           </div>
 
@@ -564,13 +570,16 @@ const App: React.FC = () => {
               <Instagram className="w-3 h-3 md:w-4 md:h-4 group-hover:text-[#FFD700] transition-colors" />
               <span>Instagram</span>
             </a>
-            <a href="https://www.linkedin.com/in/lucianobarretomkt/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white font-bold uppercase text-[10px] tracking-widest transition-colors cursor-pointer group" data-hover="true">
+            <a href="https://www.linkedin.com/company/agenciamarka/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white font-bold uppercase text-[10px] tracking-widest transition-colors cursor-pointer group" data-hover="true">
               <Linkedin className="w-3 h-3 md:w-4 md:h-4 group-hover:text-[#FFD700] transition-colors" />
               <span>LinkedIn</span>
             </a>
             <a href="https://wa.me/message/53S7L76U2J4SF1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-white font-bold uppercase text-[10px] tracking-widest transition-colors cursor-pointer group" data-hover="true">
               <Phone className="w-3 h-3 md:w-4 md:h-4 group-hover:text-[#FFD700] transition-colors" />
               <span>WhatsApp</span>
+            </a>
+            <a href="/politica-privacidade.html" className="flex items-center gap-2 text-gray-400 hover:text-white font-bold uppercase text-[10px] tracking-widest transition-colors cursor-pointer group border-l border-white/10 pl-4" data-hover="true">
+              <span>Política de Privacidade</span>
             </a>
           </div>
         </div>

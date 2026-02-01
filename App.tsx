@@ -6,7 +6,7 @@
 
 import React, { useRef, useState, useEffect } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
-import { Globe, Zap, Target, BarChart2, CheckCircle, Menu, X, ArrowRight, MapPin, Mail, Phone, ChevronLeft, ChevronRight, Instagram, Linkedin, Loader2, Send } from 'lucide-react';
+import { Globe, Zap, Target, BarChart2, CheckCircle, Menu, X, ArrowRight, MapPin, Mail, Phone, ChevronLeft, ChevronRight, Instagram, Linkedin, Loader2, Send, Package } from 'lucide-react';
 import FluidBackground from './components/FluidBackground';
 import GradientText from './components/GlitchText';
 import CustomCursor from './components/CustomCursor';
@@ -257,7 +257,7 @@ const App: React.FC = () => {
             <GradientText
               text="MARKA"
               as="h1"
-              className="text-[16vw] md:text-[16vw] leading-[0.85] font-black tracking-tighter text-center"
+              className="text-[16vw] md:text-[16vw] leading-[0.85] font-black tracking-tighter text-center font-heading"
             />
             <motion.div
               className="absolute -z-20 w-[50vw] h-[50vw] bg-white/5 blur-[40px] rounded-full pointer-events-none will-change-transform"
@@ -272,9 +272,9 @@ const App: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 1 }}
-              className="text-2xl md:text-4xl font-medium md:font-light italic font-serif text-white/95 leading-tight tracking-tight px-4"
+              className="text-xl md:text-4xl font-black text-white leading-tight tracking-tight px-4 font-title uppercase"
             >
-              “Desde 1997, atuo na construção de marcas. Não comecei no digital — <span className="text-amber-500">eu cheguei até ele.</span>”
+              “Não comecei no digital — <br />eu cheguei até ele.”
             </motion.p>
 
             <motion.div
@@ -284,8 +284,8 @@ const App: React.FC = () => {
               className="space-y-4"
             >
               <div className="w-12 h-px bg-[#FFD700]/40 mx-auto" />
-              <p className="text-white/60 font-light italic text-base md:text-xl tracking-wide font-serif">
-                Luciano Barreto, <span className="text-white/40 not-italic font-sans text-sm tracking-[0.2em] uppercase ml-2">Designer Gráfico.</span>
+              <p className="text-white/60 font-medium text-base md:text-xl tracking-wide flex items-center justify-center gap-2">
+                Luciano Barreto, <span className="text-white/40 font-bold text-sm tracking-[0.2em] uppercase flex items-center gap-2">Designer Gráfico <Package className="w-4 h-4 text-[#FFD700]" /> (Est. 1997)</span>
               </p>
             </motion.div>
 

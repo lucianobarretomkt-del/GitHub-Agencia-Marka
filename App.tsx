@@ -274,7 +274,8 @@ const App: React.FC = () => {
               transition={{ delay: 0.8, duration: 1 }}
               className="text-xl md:text-4xl font-black text-white leading-tight tracking-tight px-4 font-title uppercase"
             >
-              “Não comecei no digital — <br />eu cheguei até ele.”
+              “Não comecei no digital — <br className="hidden md:block" />eu cheguei até ele.”
+              <br className="md:hidden" />
             </motion.p>
 
             <motion.div
@@ -284,8 +285,8 @@ const App: React.FC = () => {
               className="space-y-4"
             >
               <div className="w-12 h-px bg-[#FFD700]/40 mx-auto" />
-              <p className="text-white/60 font-medium text-base md:text-xl tracking-wide flex items-center justify-center gap-2">
-                Luciano Barreto, <span className="text-white/40 font-bold text-sm tracking-[0.2em] uppercase flex items-center gap-2">Designer Gráfico <Package className="w-4 h-4 text-[#FFD700]" /> (Est. 1997)</span>
+              <p className="text-white/60 font-medium text-xs md:text-xl tracking-wide flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap">
+                Luciano Barreto, <span className="text-white/40 font-bold text-[8px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase flex items-center gap-1 md:gap-2">Designer Gráfico <Package className="w-3 h-3 md:w-4 md:h-4 text-[#FFD700]" /> (Est. 1997)</span>
               </p>
             </motion.div>
 

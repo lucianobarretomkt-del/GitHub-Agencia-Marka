@@ -11,8 +11,21 @@ const MarkaCases: React.FC = () => {
     return (
         <section id="cases" className="bg-[#050505] text-white font-sans overflow-hidden selection:bg-amber-500 selection:text-black">
 
+            {/* HEADER DA SESSÃO - Consistência com Serviços */}
+            <div className="max-w-[1600px] mx-auto px-4 md:px-6 pt-20 md:pt-32">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 px-4 gap-6">
+                    <h2 className="text-2xl sm:text-3xl md:text-8xl font-heading font-bold uppercase leading-[1.1] md:leading-[0.9] drop-shadow-lg w-full md:w-auto">
+                        Nossos <br />
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFD700] to-[#FFA000]">Cases</span>
+                    </h2>
+                    <p className="text-white/60 max-w-sm text-left">
+                        Resultados reais construídos com estratégia e design.
+                    </p>
+                </div>
+            </div>
+
             {/* 1. GALERIA DE CASES (RESPONSIVIDADE TOTAL) */}
-            <div className="max-w-[1440px] mx-auto space-y-24 py-32 px-4 md:px-10">
+            <div className="max-w-[1440px] mx-auto space-y-24 pb-32 px-4 md:px-10">
 
                 {/* CASE G&S CONTABILIDADE */}
                 <article className="relative group">
@@ -35,7 +48,7 @@ const MarkaCases: React.FC = () => {
                         </picture>
 
                         <div className="absolute top-8 right-8 pointer-events-none">
-                            <span className="bg-black/40 backdrop-blur-xl border border-white/10 text-white/50 px-4 py-2 rounded-full text-[10px] tracking-[0.3em] uppercase">
+                            <span className="text-xs font-mono border border-white/30 px-2 py-1 rounded-full backdrop-blur-md uppercase tracking-wider text-white">
                                 Marketing Estratégico
                             </span>
                         </div>
@@ -76,7 +89,7 @@ const MarkaCases: React.FC = () => {
                         </picture>
 
                         <div className="absolute top-8 right-8 pointer-events-none">
-                            <span className="bg-black/40 backdrop-blur-xl border border-white/10 text-white/50 px-4 py-2 rounded-full text-[10px] tracking-[0.3em] uppercase">
+                            <span className="text-xs font-mono border border-white/30 px-2 py-1 rounded-full backdrop-blur-md uppercase tracking-wider">
                                 E-commerce
                             </span>
                         </div>

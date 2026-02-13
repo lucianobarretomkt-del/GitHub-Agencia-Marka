@@ -16,10 +16,10 @@ interface GradientTextProps {
 
 const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span', className = '' }) => {
   return (
-    <Component className={`relative inline-block font-black tracking-tighter isolate ${className}`}>
+    <Component className={`relative inline-block font-black tracking-tighter isolate px-8 ${className}`}>
       {/* Main Gradient Text */}
       <motion.span
-        className="absolute inset-0 z-10 block bg-gradient-to-r from-white via-[#FFD700] via-[#FFA000] via-[#FDE047] to-white bg-[length:200%_auto] bg-clip-text text-transparent will-change-[background-position]"
+        className="absolute inset-y-0 left-0 right-0 z-10 block bg-gradient-to-r from-white via-[#FFD700] via-[#FFA000] via-[#FDE047] to-white bg-[length:200%_auto] bg-clip-text text-transparent will-change-[background-position] px-8"
         animate={{
           backgroundPosition: ['0% center', '200% center'],
         }}
@@ -29,7 +29,7 @@ const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span
           ease: "linear",
         }}
         aria-hidden="true"
-        style={{ 
+        style={{
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
           transform: 'translateZ(0)',
@@ -38,25 +38,25 @@ const GradientText: React.FC<GradientTextProps> = ({ text, as: Component = 'span
       >
         {text}
       </motion.span>
-      
+
       {/* Base layer for solid white fallback */}
-      <span 
+      <span
         className="block text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-200 opacity-50"
-        style={{ 
+        style={{
           WebkitBackgroundClip: 'text',
-          WebkitTextFillColor: 'transparent' 
+          WebkitTextFillColor: 'transparent'
         }}
       >
         {text}
       </span>
-      
+
       {/* Blur Glow Effect - Static to save performance */}
       <span
-        className="absolute inset-0 -z-10 block bg-gradient-to-r from-[#FFD700] via-[#FFA000] via-[#FDE047] to-[#FFD700] bg-[length:200%_auto] bg-clip-text text-transparent blur-xl md:blur-2xl opacity-40"
-        style={{ 
+        className="absolute inset-y-0 left-0 right-0 -z-10 block bg-gradient-to-r from-[#FFD700] via-[#FFA000] via-[#FDE047] to-[#FFD700] bg-[length:200%_auto] bg-clip-text text-transparent blur-xl md:blur-2xl opacity-40 px-8"
+        style={{
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent',
-          transform: 'translateZ(0)' 
+          transform: 'translateZ(0)'
         }}
       >
         {text}

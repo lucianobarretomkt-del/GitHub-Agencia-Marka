@@ -109,6 +109,47 @@ const MarkaCases: React.FC = () => {
                     </div>
                 </article>
 
+                {/* CASE AIRO ENERGIA SOLAR */}
+                <article className="relative group">
+                    <a
+                        href="https://airoenergia.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="block rounded-[3rem] overflow-hidden border border-zinc-900 bg-zinc-950/50 transition-all duration-1000 hover:border-amber-500/20 hover:shadow-[0_0_80px_rgba(245,158,11,0.03)]"
+                    >
+                        <picture>
+                            <source media="(max-width: 767px)" srcSet="/img/carrossel-airo-13fev2026-mobile-1.webp" />
+                            <img
+                                src="/img/carrossel-airo-13fev2026-desktop-1.webp"
+                                alt="Case Airo Energia Solar - Prestador de Serviços"
+                                width={1920}
+                                height={1080}
+                                className="w-full h-auto aspect-[4/5] md:aspect-auto transition-transform duration-[3s] ease-out group-hover:scale-[1.02]"
+                                loading="lazy"
+                            />
+                        </picture>
+
+                        <div className="absolute top-8 right-8 pointer-events-none">
+                            <span className="text-xs font-mono border border-white/30 px-2 py-1 rounded-full backdrop-blur-md uppercase tracking-wider">
+                                Prestador de Serviços
+                            </span>
+                        </div>
+                    </a>
+                    <div className="mt-10 px-6">
+                        <h4 className="text-3xl md:text-4xl font-bold tracking-tight text-white mb-4 font-heading">
+                            Airo Energia Solar
+                        </h4>
+                        <a
+                            href="https://airoenergia.com.br/"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-zinc-400 text-lg font-medium uppercase underline underline-offset-8 hover:text-amber-500 transition-colors tracking-widest"
+                        >
+                            SAIBA MAIS
+                        </a>
+                    </div>
+                </article>
+
             </div>
 
         </section>

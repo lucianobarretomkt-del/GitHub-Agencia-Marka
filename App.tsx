@@ -248,27 +248,33 @@ const App: React.FC = () => {
       </AnimatePresence>
 
       {/* HERO SECTION */}
-      <header id="hero" className="relative h-[100svh] min-h-[700px] flex flex-col items-center justify-center overflow-hidden px-4 pt-[160px] md:pt-[180px]">
+      <header id="hero" className="relative h-[100svh] min-h-[750px] flex flex-col overflow-hidden">
+        {/* Espaçador para o Menu Fixo */}
+        <div className="h-24 md:h-32 shrink-0" />
+
+        {/* ÁREA DE CONTEÚDO DISTRIBUÍDA */}
         <motion.div
           style={{ y, opacity, transform: 'translate3d(0,0,0)' }}
-          className="z-20 text-center flex flex-col items-center w-full max-w-6xl pb-24 md:pb-32"
+          className="flex-1 flex flex-col items-center justify-evenly w-full max-w-7xl mx-auto px-4 z-20"
         >
+          {/* 1. TÍTULO MARKA */}
           <div className="relative w-full flex justify-center items-center">
             <GradientText
               text="MARKA"
               as="h1"
-              className="text-[15vw] md:text-[15vw] leading-[0.9] font-black text-center font-heading"
+              className="text-[15vw] md:text-[13vw] leading-none font-black text-center font-heading"
             />
             <motion.div
-              className="absolute -z-20 w-[50vw] h-[50vw] bg-white/5 blur-[40px] rounded-full pointer-events-none will-change-transform"
-              animate={{ scale: [0.8, 1.2, 0.8], opacity: [0.3, 0.6, 0.3] }}
+              className="absolute -z-20 w-[40vw] h-[40vw] bg-white/5 blur-[40px] rounded-full pointer-events-none will-change-transform"
+              animate={{ scale: [0.8, 1.1, 0.8], opacity: [0.3, 0.5, 0.3] }}
               transition={{ duration: 6, repeat: Infinity }}
               style={{ transform: 'translateZ(0)' }}
             />
           </div>
 
-          <div className="mt-12 md:mt-16 space-y-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
-            <div className="space-y-8 text-center md:text-right order-2 md:order-1">
+          {/* 2. BLOCO CENTRAL: SLOGAN + CARICATURA */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16 w-full">
+            <div className="space-y-6 text-center md:text-right order-2 md:order-1">
               <motion.p
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -282,7 +288,7 @@ const App: React.FC = () => {
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
                 transition={{ delay: 1.2, duration: 1 }}
-                className="space-y-4"
+                className="space-y-3"
               >
                 <div className="w-12 h-px bg-[#FFD700]/40 mx-auto md:mr-0 md:ml-auto" />
                 <p className="text-white/60 font-medium text-xs md:text-xl tracking-wide flex items-center justify-center md:justify-end gap-1 md:gap-2 whitespace-nowrap">
@@ -292,36 +298,38 @@ const App: React.FC = () => {
             </div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 1, duration: 1 }}
               className="relative group shrink-0 order-1 md:order-2"
             >
-              <div className="absolute inset-0 bg-[#FFD700]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <div className="absolute inset-0 bg-[#FFD700]/10 blur-3xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
               <img
                 src="/img/Caricatura-luciano-julia-1.webp"
                 alt="Caricatura Luciano e Julia"
-                className="w-48 md:w-80 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10"
+                className="w-40 md:w-64 lg:w-72 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10 transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
           </div>
 
+          {/* 3. BOTÃO DE AÇÃO (CTA) */}
           <motion.a
             href="https://wa.me/message/53S7L76U2J4SF1"
             target="_blank"
             rel="noopener noreferrer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 1.8, duration: 1 }}
-            className="mt-12 px-10 py-5 bg-[#FFD700] text-black font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all duration-500 flex items-center gap-3 group cursor-pointer shadow-[0_0_30px_rgba(255,215,0,0.2)]"
+            transition={{ delay: 1.5, duration: 1 }}
+            className="px-10 py-5 bg-[#FFD700] text-black font-bold uppercase tracking-widest rounded-full hover:bg-white transition-all duration-500 flex items-center gap-3 group cursor-pointer shadow-[0_0_30px_rgba(255,215,0,0.2)] z-30"
             data-hover="true"
           >
             Fale Conosco <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </motion.a>
         </motion.div>
 
+        {/* 4. FAIXA BRANCA INTERATIVA (BASE) */}
         <div
-          className="absolute bottom-10 md:bottom-14 left-0 w-full py-2 md:py-2.5 bg-white text-black z-10 overflow-hidden border-y border-black/10 rotate-1 shadow-2xl will-change-transform flex items-center"
+          className="relative w-full py-4 md:py-6 bg-white text-black z-10 overflow-hidden border-y border-black/10 rotate-1 shadow-2xl will-change-transform flex items-center mt-auto mb-8 md:mb-10"
           style={{ transform: 'translate3d(0,0,0) rotate(1deg)' }}
         >
           <motion.div
@@ -401,10 +409,10 @@ const App: React.FC = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section >
 
       {/* SERVICES SECTION */}
-      <section id="services" className="relative z-10 py-20 md:py-32">
+      < section id="services" className="relative z-10 py-20 md:py-32" >
         <div className="max-w-[1600px] mx-auto px-4 md:px-6">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 md:mb-16 px-4 gap-6">
             <h2 className="text-2xl sm:text-3xl md:text-8xl font-heading font-bold uppercase leading-[1.1] md:leading-[0.9] drop-shadow-lg w-full md:w-auto">
@@ -422,7 +430,7 @@ const App: React.FC = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section >
       <MarkaCases />
 
       <MarkaMarquee />
@@ -704,7 +712,7 @@ const App: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </div>
+    </div >
   );
 };
 

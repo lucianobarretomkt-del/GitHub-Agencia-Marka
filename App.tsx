@@ -257,7 +257,7 @@ const App: React.FC = () => {
             <GradientText
               text="MARKA"
               as="h1"
-              className="text-[16vw] md:text-[16vw] leading-[0.85] font-black tracking-tighter text-center font-heading"
+              className="text-[15vw] md:text-[15vw] leading-[0.9] font-black text-center font-heading"
             />
             <motion.div
               className="absolute -z-20 w-[50vw] h-[50vw] bg-white/5 blur-[40px] rounded-full pointer-events-none will-change-transform"
@@ -267,29 +267,43 @@ const App: React.FC = () => {
             />
           </div>
 
-          <div className="mt-12 md:mt-16 space-y-8 max-w-3xl mx-auto">
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8, duration: 1 }}
-              className="text-xl md:text-4xl font-black text-white leading-tight tracking-tight px-4 font-title uppercase"
-            >
-              “Não comecei no digital — <br className="hidden md:block" />eu cheguei até ele.”
-              <br className="md:hidden" />
-            </motion.p>
+          <div className="mt-12 md:mt-16 space-y-8 max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-center gap-8 md:gap-16">
+            <div className="space-y-8 text-center md:text-right order-2 md:order-1">
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8, duration: 1 }}
+                className="text-xl md:text-4xl font-black text-white leading-tight tracking-tight font-title uppercase"
+              >
+                “Não comecei no digital — <br className="hidden md:block" />eu cheguei até ele.”
+              </motion.p>
+
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 1.2, duration: 1 }}
+                className="space-y-4"
+              >
+                <div className="w-12 h-px bg-[#FFD700]/40 mx-auto md:mr-0 md:ml-auto" />
+                <p className="text-white/60 font-medium text-xs md:text-xl tracking-wide flex items-center justify-center md:justify-end gap-1 md:gap-2 whitespace-nowrap">
+                  Luciano Barreto, <span className="text-white/40 font-bold text-[8px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase flex items-center gap-1 md:gap-2">Designer Gráfico <Package className="w-3 h-3 md:w-4 md:h-4 text-[#FFD700]" /> (Est. 1997)</span>
+                </p>
+              </motion.div>
+            </div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1.2, duration: 1 }}
-              className="space-y-4"
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 1, duration: 1 }}
+              className="relative group shrink-0 order-1 md:order-2"
             >
-              <div className="w-12 h-px bg-[#FFD700]/40 mx-auto" />
-              <p className="text-white/60 font-medium text-xs md:text-xl tracking-wide flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap">
-                Luciano Barreto, <span className="text-white/40 font-bold text-[8px] md:text-sm tracking-[0.1em] md:tracking-[0.2em] uppercase flex items-center gap-1 md:gap-2">Designer Gráfico <Package className="w-3 h-3 md:w-4 md:h-4 text-[#FFD700]" /> (Est. 1997)</span>
-              </p>
+              <div className="absolute inset-0 bg-[#FFD700]/20 blur-2xl rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+              <img
+                src="/img/Caricatura-luciano-julia-1.webp"
+                alt="Caricatura Luciano e Julia"
+                className="w-48 md:w-80 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10"
+              />
             </motion.div>
-
           </div>
 
           <motion.a

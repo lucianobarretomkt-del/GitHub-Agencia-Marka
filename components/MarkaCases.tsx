@@ -77,9 +77,9 @@ const MarkaCases: React.FC = () => {
                         className="block rounded-[3rem] overflow-hidden border border-zinc-900 bg-zinc-950/50 transition-all duration-1000 hover:border-amber-500/20 hover:shadow-[0_0_80px_rgba(245,158,11,0.03)]"
                     >
                         <picture>
-                            <source media="(max-width: 767px)" srcSet="/img/carrossel-solary-31012026-mobile-1.png" />
+                            <source media="(max-width: 767px)" srcSet="/img/carrossel-solary-31012026-mobile-1.webp" />
                             <img
-                                src="/img/carrossel-solary-31012026-desktop-1.png"
+                                src="/img/carrossel-solary-31012026-desktop-1.webp"
                                 alt="Case Solary Metais - E-commerce Nacional"
                                 width={1920}
                                 height={1080}

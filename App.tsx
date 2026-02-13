@@ -307,7 +307,7 @@ const App: React.FC = () => {
               <img
                 src="/img/Caricatura-luciano-julia-1.webp"
                 alt="Caricatura Luciano e Julia"
-                className="w-40 md:w-64 lg:w-72 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10 transition-transform duration-700 group-hover:scale-105"
+                className="w-[85vw] md:w-64 lg:w-72 h-auto drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] relative z-10 transition-transform duration-700 group-hover:scale-105"
               />
             </motion.div>
           </div>
